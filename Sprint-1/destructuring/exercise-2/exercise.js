@@ -83,4 +83,18 @@ for (const person of hogwarts) {
   if (name) { // If the name is not null
     console.log(name);
   }
-}
+};
+
+function whoHasPet({firstName, lastName, pet, occupation}) {
+  if (pet && occupation === "Teacher") {
+    return `${firstName} ${lastName}`;
+  }
+  return null;
+};
+
+for (const person of hogwarts) {
+  const name = whoHasPet(person);
+  if (name) {
+    console.log(name);
+  } 
+};
