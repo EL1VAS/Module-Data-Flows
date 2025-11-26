@@ -26,11 +26,6 @@ function createFilmCard(films) {
     return filmCard;
 }
 
-const filmCards = [];
-
-for (const item of films) {
-    const card = createFilmCard(item);
-    filmCards.push(card);   
-};
+const filmCards = films.map(createFilmCard);
 
 document.body.append(...filmCards);
