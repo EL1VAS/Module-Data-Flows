@@ -8,13 +8,7 @@
   };
 
 // Goal refactor this project to use film card template
-const filmCard = document.createElement("section");
-const title = document.createElement("h1");
-const director = document.createElement("p");
-const times = document.createElement("")
-director.textContent = film.director;
-title.textContent = film.title;
-filmCard.appendChild(title);
-filmCard.appendChild(director);
-document.body.appendChild(filmCard);
+const filmCard = document.getElementById("film-card-template").content.cloneNode(true);
 
+filmCard.querySelector("h1").textContent = film.title;
+document.body.appendChild(filmCard);
