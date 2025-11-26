@@ -12,7 +12,7 @@ function calculateReceipt({quantity, itemName, unitPricePence}) {
   const unitTotal = unitPrice * quantity; // Calculates the total of the unit
   return {
     line:
-  `${quantity.toString().padEnd(8)}${itemName.toString().padEnd(16)}${unitTotal}${unitTotal.toFixed(2).padStart(4)}`,
+  `${quantity.toString().padEnd(8)}${itemName.toString().padEnd(20)}${unitTotal.toFixed(2).padStart(4)}`,
 unitTotal // Line refers to strings so we created this format to match with the expected outcome
 } // Padding creates the spaces between columns
 };
@@ -26,4 +26,4 @@ for (const item of order) { // Iterating within the order objects
   totalCost += unitTotal; // Adding the unitTotal to the total
 };
 
-console.log("\nTotal:"+totalCost); // Total is loged in the console with a break above it
+console.log("\nTotal:"+totalCost.toFixed(2)); // Total is loged in the console with a break above it
