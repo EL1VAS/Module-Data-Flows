@@ -72,7 +72,7 @@ let hogwarts = [
 ];
 
 function whoIsGryffindor({firstName,lastName,house}) {
-  if (house === Gryffindor) {
+  if (house === "Gryffindor") { // Used house because we work with deconstructured data
     return `${firstName} ${lastName}`
   }
   return null;
@@ -80,7 +80,7 @@ function whoIsGryffindor({firstName,lastName,house}) {
 
 for (const person of hogwarts) {
   const name = whoIsGryffindor(person);
-  if (name) {
+  if (name) { // If the name is not null
     console.log(name);
   }
 }
