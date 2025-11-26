@@ -1,14 +1,29 @@
- const film = 
+ const films = [
   {
     title: "Killing of Flower Moon",
     director: "Martin Scorsese",
     times: ["15:35"],
     certificate: "15",
     duration: 112,
-  };
+  }
+  {
+    title: "Typist Artist Pirate King",
+    directory: "Carol Morley",
+    times: ["15:00", "20:00"],
+    certificate: "12A",
+    duration: 108,
+  }
+];
 
 // Goal refactor this project to use film card template
-const filmCard = document.getElementById("film-card-template").content.cloneNode(true);
+function createFilmCard(films) {
+    const filmCard = document.getElementById("film-card-template").content.cloneNode(true);
 
-filmCard.querySelector("h1").textContent = film.title;
-document.body.appendChild(filmCard);
+    filmCard.querySelector("h1").textContent = films.title;
+    filmCard.querySelector("p[data-director]").textContent = films.director;
+    filmCard.querySelector("time").textContent = films.times;
+    filmCard.querySelector("p[data-certificate]").textContent = films.certificate;
+    return filmCard;
+}
+
+document.body.append(createFilmCard(film[0]), createFilmCard(film[1]));
