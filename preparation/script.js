@@ -5,10 +5,10 @@
     times: ["15:35"],
     certificate: "15",
     duration: 112,
-  }
+  },
   {
     title: "Typist Artist Pirate King",
-    directory: "Carol Morley",
+    director: "Carol Morley",
     times: ["15:00", "20:00"],
     certificate: "12A",
     duration: 108,
@@ -26,4 +26,8 @@ function createFilmCard(films) {
     return filmCard;
 }
 
-document.body.append(createFilmCard(film[0]), createFilmCard(film[1]));
+for (const item of films) {
+    const card = createFilmCard(item);
+    document.body.appendChild(card);
+};
+
