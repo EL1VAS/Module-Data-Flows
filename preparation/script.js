@@ -15,3 +15,5 @@
   },
 ];
 
+// Render a film card in the UI
+
