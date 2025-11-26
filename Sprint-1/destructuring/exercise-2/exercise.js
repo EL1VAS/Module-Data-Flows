@@ -70,3 +70,17 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
+
+function whoIsGryffindor({firstName,lastName,house}) {
+  if (house === Gryffindor) {
+    return `${firstName} ${lastName}`
+  }
+  return null;
+};
+
+for (const person of hogwarts) {
+  const name = whoIsGryffindor(person);
+  if (name) {
+    console.log(name);
+  }
+}
