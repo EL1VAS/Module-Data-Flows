@@ -39,12 +39,12 @@ function render() {
 
 const searchBox = document.getElementById("search");
 
-searchInput.addEventListener("input", (event) => {
-    state.searchTerm = event.target.value;
-    document.body.innerHTML = '';  // Clear existing cards
-    document.body.prepend(searchInput);  // Keep the search input
-    render();  // Re-render with filtered results
-});
+searchBox.addEventListener("input", handleSearchInput);
+
+function handleSearchInput(event) {
+    const searchTerm = event.target.value;
+    console.log(searchTerm);
+};
 
 render();
 
