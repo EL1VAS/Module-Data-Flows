@@ -24,8 +24,12 @@ function createFilmCard(films) {
     filmCard.querySelector("time").textContent = films.times;
     filmCard.querySelector("p[data-certificate]").textContent = films.certificate;
     return filmCard;
-}
+};
 
-const filmCards = films.map(createFilmCard);
+function render() {
+  const filmCards = films.map(createFilmCard);
+  document.body.append(...filmCards);
+};
 
-document.body.append(...filmCards);
+render();
+
