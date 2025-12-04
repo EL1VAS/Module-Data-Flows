@@ -37,7 +37,7 @@ function render() {
     document.body.append(...filmCards);
 };
 
-const searchInput = document.getElementById("search");
+const searchBox = document.getElementById("search");
 
 searchInput.addEventListener("input", (event) => {
     state.searchTerm = event.target.value;
