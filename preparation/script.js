@@ -45,7 +45,7 @@ const searchBox = document.getElementById("search");
 searchBox.addEventListener("input", handleSearchInput);
 
 function handleSearchInput(event) {
-    const searchTerm = event.target.value;
+    state.searchTerm = event.target.value; // updates the state
     render(); // Re render with filtered results
 };
 
