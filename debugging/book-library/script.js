@@ -38,7 +38,7 @@ function submit() {
     return false;
   } else {
     let book = new Book(title.value, author.value, pages.value, check.checked); // fixed the author.value
-    myLibrarylibrary.push(book); // Fixed the typo
+    myLibrary.push(book); // Fixed the typo
     render();
   }
 }
