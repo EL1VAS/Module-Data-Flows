@@ -33,7 +33,7 @@ function render() {
     const filteredFilms = state.films.filter((film) =>
   film.title.includes(state.searchTerm)
 );
-    const filmCards = films.map(createFilmCard);
+    const filmCards = filteredFilms.map(createFilmCard);
     document.body.append(...filmCards);
 };
 
