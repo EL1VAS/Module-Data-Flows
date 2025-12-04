@@ -1,4 +1,5 @@
-const films = [
+const state = {
+    films: [
   {
     title: "Killing of Flower Moon",
     director: "Martin Scorsese",
@@ -13,7 +14,7 @@ const films = [
     certificate: "12A",
     duration: 108,
   }
-];
+]};
 
 // Goal refactor this project to use film card template
 function createFilmCard(films) {
