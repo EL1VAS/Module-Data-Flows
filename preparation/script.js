@@ -30,6 +30,7 @@ function createFilmCard(films) {
 };
 
 function render() {
+    document.body.textContent = "";
     const filteredFilms = state.films.filter((film) =>
   film.title.includes(state.searchTerm)
 );
