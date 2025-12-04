@@ -37,5 +37,16 @@ function render() {
     document.body.append(...filmCards);
 };
 
+const searchInput = document.getElementById("search-input");
+
+searchInput.addEventListener("input", (event) => {
+    state.searchTerm = event.target.value;
+    document.body.innerHTML = '';  // Clear existing cards
+    document.body.prepend(searchInput);  // Keep the search input
+    render();  // Re-render with filtered results
+});
+
 render();
+
+
 
