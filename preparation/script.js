@@ -14,7 +14,9 @@ const state = {
     certificate: "12A",
     duration: 108,
   }
-]};
+],
+searchTerm: "",
+};
 
 // Goal refactor this project to use film card template
 function createFilmCard(films) {
@@ -28,8 +30,11 @@ function createFilmCard(films) {
 };
 
 function render() {
-  const filmCards = films.map(createFilmCard);
-  document.body.append(...filmCards);
+    const filteredFilms = state.films.filter((film) =>
+  film.title.includes(state.searchTerm)
+);
+    const filmCards = films.map(createFilmCard);
+    document.body.append(...filmCards);
 };
 
 render();
