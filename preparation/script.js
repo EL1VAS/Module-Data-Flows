@@ -30,7 +30,9 @@ function createFilmCard(films) {
 };
 
 function render() {
-    document.body.textContent = "";
+    const container = document.getElementById("film-container"); // Calls a container created in html
+    container.textContent = ""; // Clears the container
+
     const filteredFilms = state.films.filter((film) =>
   film.title.includes(state.searchTerm)
 );
@@ -44,7 +46,7 @@ searchBox.addEventListener("input", handleSearchInput);
 
 function handleSearchInput(event) {
     const searchTerm = event.target.value;
-    console.log(searchTerm);
+    render(); // Re render with filtered results
 };
 
 render();
