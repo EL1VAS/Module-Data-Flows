@@ -37,7 +37,7 @@ function render() {
   film.title.includes(state.searchTerm)
 );
     const filmCards = filteredFilms.map(createFilmCard);
-    document.body.append(...filmCards);
+    container.append(...filmCards);
 };
 
 const searchBox = document.getElementById("search");
