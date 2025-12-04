@@ -31,6 +31,8 @@ function submit() {
   if (
     title.value == null ||
     title.value == "" ||
+    author.value == null || // Added the author prerequisite too
+    author.value == "" || // Added the author prerequisite too
     pages.value == null ||
     pages.value == ""
   ) {
