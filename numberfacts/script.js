@@ -6,6 +6,13 @@ numberInput.addEventListener("input", getFactAjax);
 
 function getFactAjax() {
     let number = numberInput.value;
-    console.log(number);
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://numbersapi.com/"+number);
+    xhr.onload = function() {
+        if (this.status == 200){
+            console.log(this.responseText);
+        }
 
+    }
+    xhr.send();
 }
