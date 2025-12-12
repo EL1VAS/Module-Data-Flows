@@ -4,7 +4,7 @@ let image = document.getElementById("img-container");
 const comicNumbers = [3, 9, 106, 303, 309, 489, 968, 2054, 3000, "latest"];
 
 function getMultipleHumourFetch() {
-    for let (i = 0; i < comicNumbers.length; i++) {
+    for (let i = 0; i < comicNumbers.length; i++) {
         fetch(`https://xkcd.now.sh/?comic=${comicNumbers[i]}`).then(response => response.json()).then(data => {
         console.log(data); // Logged in the console data of each comic
 
