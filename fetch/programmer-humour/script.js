@@ -1,19 +1,10 @@
-let fact = document.getElementById("fact");
-let factText = document.getElementById("factText");
-let numberInput = document.getElementById("numberInput");
+let title = document.getElementById("safe-title");
+let image = document.getElementById("img-container");
 
-numberInput.addEventListener("input", getFactFetch);
+function getHumourFetch() {
+    fetch(`https://xkcd.now.sh/?comic=latest`).then(response => response.json()).then(data => {
+        console.log(data);
+        }).catch(error => console.log(error))
+    };
 
-function getFactFetch() {
-    let number = numberInput.value;
-
-    fetch(`https://xkcd.now.sh/?comic=latest`).then(response => response.text()).then(data => {
-        if (number != "") {
-            fact.style.display = "block"
-            factText.innerText = data;
-        }
-
-    })
-    .catch(error => console.log(error));
-
-}
+getHumourFetch();
