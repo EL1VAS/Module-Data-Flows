@@ -9,7 +9,7 @@ function getHumourFetch() {
 
         const imgElement = document.createElement("img"); // Creates an image element
         imgElement.src = data.img; // Takes the image from data
-        
+        imgElement.alt = data.alt; // Takes the text from data but apparently is not needed for display as text is embeded in the img
 
         image.appendChild(imgElement); // Appends the element to the container
 
