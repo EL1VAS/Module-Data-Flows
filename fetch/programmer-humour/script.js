@@ -1,4 +1,3 @@
-let title = document.getElementById("safe-title");
 let image = document.getElementById("img-container");
 
 const comicNumbers = [3, 9, 106, 303, 309, 489, 968, 2054, 3000, "latest"];
@@ -30,4 +29,4 @@ function getMultipleHumourFetch() {
     
     }
 
-getHumourFetch();
+getMultipleHumourFetch();
