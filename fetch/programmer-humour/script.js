@@ -11,7 +11,7 @@ function getMultipleHumourFetch() {
         card.className = "card";
 
         const titleElement = document.createElement("h1"); // Create title for each comic
-        title.textContent = data.safe_title; // Display the title from the data  
+        titleElement.textContent = data.safe_title; // Display the title from the data  
 
         const imgElement = document.createElement("img"); // Creates an image element
         imgElement.src = data.img; // Takes the image from data
