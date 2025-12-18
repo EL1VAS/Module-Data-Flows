@@ -16,6 +16,7 @@ Take a look at the following code:
 ```
 
 Explain why line 5 and line 8 output different numbers.
+// Line 5 will give a log of 2 as it is operating inside the function and line 8 will log 1 as it is taking the x from the global scope
 
 ## Question 2
 
@@ -34,6 +35,7 @@ console.log(y);
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+// 10 from the log of line 29, then undefined when we log the function that doesn't return anything, then refference error because y is only defined within the function scope
 
 ## Question 3
 
@@ -62,3 +64,7 @@ console.log(y);
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+//Line 52 returns 10, as function takes a copy of the value of x adding 1.
+//Line 53 logs 9 as it takes the unchanged x from the global scope. 
+//Line 62 returns 10 as function f2 changes the property x of the object. 
+//Line 63 logs the modified object {x: 10}
