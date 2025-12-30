@@ -62,10 +62,26 @@ function displayPhotos(photos) {
         photoElem.appendChild(mainImg);
     }
 
-    photos.forEach(function(photo) {
+    photos.forEach(function(photo, index) {
         const img = document.createElement("img");
+        img.className = "thumb";
+
+        if (index === 0) {
+            img.className = "thumb active";
+        }
         img.setAttribute("src", photo.urls.thumb);
         img.setAttribute("alt", photo.alt_description || "Weather photo");
+
+        img.addEventListener("click", function() { //Update main img
+            const mainImg = photoElem.querySelector("img");
+            mainImg.src = photo.urls.regular;
+
+            const allThumbs = document.querySelectorAll(".thumb");
+            for (let i = 0; i < allThumbs.length; i++) {
+                allThumbs[i].classList.remove("active");
+            }
+            img.classList.add("active");
+        })
 
         thumbsElem.appendChild(img);
     })
