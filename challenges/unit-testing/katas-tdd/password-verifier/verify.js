@@ -1,8 +1,8 @@
 function verify(password) {
-  if (password.length < 8) {
-    return "password rejected";
+  if (password === null || password.length < 8) {
+    return "Password rejected";
   }
-  return "password accepted";
+  return "Password accepted";
 }
 
 module.exports = verify;
