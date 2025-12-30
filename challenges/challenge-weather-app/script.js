@@ -41,6 +41,7 @@ function getPhotos(query) {
     })
     .then(function(data) {
         console.log("Photo's data:", data);
+        displayPhotos(data.results);
     })
     .catch(function(error) {
         console.error("Error fetching photos...", error);
@@ -52,15 +53,19 @@ function displayPhotos(photos) {
     const thumbsElem = document.getElementById("thumbs");
 
     thumbsElem.innerHTML = ""; // To clear previous display
+    photoElem.innerHTML = ""; // To clear previous display of main photo
 
     if (photos.length > 0) { //Display first photo in the main area
-        photoElem.style.backgroundImage = `url(${photos[0].url.regular})`;
+        const mainImg = document.createElement("img");
+        mainImg.setAttribute("src", photos[0].urls.regular);
+        mainImg.setAttribute("alt", photos[0].alt_description || "Weather photo");
+        photoElem.appendChild(mainImg);
     }
 
     photos.forEach(function(photo) {
-        const img = document.getElementById("img");
-        img.setAttribute('src', photo.urls.thumb);
-        img.setAttribute('alt', photo.alt_description || 'Weather photo');
+        const img = document.createElement("img");
+        img.setAttribute("src", photo.urls.thumb);
+        img.setAttribute("alt", photo.alt_description || "Weather photo");
 
         thumbsElem.appendChild(img);
     })
