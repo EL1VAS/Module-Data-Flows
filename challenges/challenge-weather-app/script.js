@@ -46,3 +46,22 @@ function getPhotos(query) {
         console.error("Error fetching photos...", error);
     })
 }
+
+function displayPhotos(photos) {
+    const photoElem = document.getElementById("photo");
+    const thumbsElem = document.getElementById("thumbs");
+
+    thumbsElem.innerHTML = ""; // To clear previous display
+
+    if (photos.length > 0) { //Display first photo in the main area
+        photoElem.style.backgroundImage = `url(${photos[0].url.regular})`;
+    }
+
+    photos.forEach(function(photo) {
+        const img = document.getElementById("img");
+        img.setAttribute('src', photo.urls.thumb);
+        img.setAttribute('alt', photo.alt_description || 'Weather photo');
+
+        thumbsElem.appendChild(img);
+    })
+}
