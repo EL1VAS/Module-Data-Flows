@@ -98,13 +98,13 @@ function updateCredits(photo) {
 
     creditUser.textContent = photo.user.name; // Update photos user name and
     creditUser.href = photo.user.links.html; // link
-    creditUser.target = "_blank";
-    creditUser.rel = "noopener";
+    creditUser.target = "_blank"; // Opens link in a new tab
+    creditUser.rel = "noopener"; // Securely
 
 
     creditPlatform.href = "https://unsplash.com"; // Update platform's link
-    creditPlatform.target = "_blank";
-    creditPlatform.rel = "noopener";
+    creditPlatform.target = "_blank"; // Opens link in a new tab
+    creditPlatform.rel = "noopener"; // Adds security
 }
 
 const searchBox = document.getElementById("search");
