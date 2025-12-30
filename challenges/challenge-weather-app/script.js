@@ -60,6 +60,8 @@ function displayPhotos(photos) {
         mainImg.setAttribute("src", photos[0].urls.regular);
         mainImg.setAttribute("alt", photos[0].alt_description || "Weather photo");
         photoElem.appendChild(mainImg);
+
+        updateCredits(photos[0]);
     }
 
     photos.forEach(function(photo, index) {
@@ -68,6 +70,7 @@ function displayPhotos(photos) {
 
         if (index === 0) {
             img.className = "thumb active";
+
         }
         img.setAttribute("src", photo.urls.thumb);
         img.setAttribute("alt", photo.alt_description || "Weather photo");
@@ -81,10 +84,22 @@ function displayPhotos(photos) {
                 allThumbs[i].classList.remove("active");
             }
             img.classList.add("active");
+
+            updateCredits(photo);
         })
 
         thumbsElem.appendChild(img);
     })
+}
+
+function updateCredits(photo) {
+    const creditUser = document.getElementById("credit-user");
+    const creditPlatform = document.getElementById("credit-platform");
+
+    creditUser.textContent = photo.user.name; // Update photos user name and
+    creditUser.href = photo.user.links.html; // link
+
+    creditPlatform.href = "https://unsplash.com"; // Update platform's link
 }
 
 const searchBox = document.getElementById("search");
