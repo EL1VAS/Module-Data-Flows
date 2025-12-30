@@ -4,9 +4,20 @@ function add(numbers) {
   }
   const numbersArray = numbers.split(",");
   let sum = 0;
+  const negatives = [];
 
   for (let i = 0; i < numbersArray.length; i++) {
-    sum += parseInt(numbersArray[i]);
+    const num = parseInt(numbersArray[i]);
+    if (num < 0) {
+      negatives.push(num);
+    }
+    if (num <= 1000) {
+      sum += num;
+    }
+  }
+
+  if (negatives.length > 0) {
+    throw new Error(`negatives not allowed: ${negatives.join(",")}`);
   }
   return sum;
 }
