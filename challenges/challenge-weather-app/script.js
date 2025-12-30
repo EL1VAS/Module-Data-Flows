@@ -1,4 +1,4 @@
-const WEATHER_API_KEY = "01c8510e47db5e342821cbfad960defc";
+const WEATHER_API_KEY = CONFIG.WEATHER_API_KEY;
 
 function getWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${WEATHER_API_KEY}`;
@@ -8,12 +8,14 @@ function getWeather(city) {
 
     fetch(url)
     .then(function(response) {
-        return response.json;
+        console.log("Response status:", response.status);
+        console.log("URL:", url);
+        return response.json();
     })
     .then(function(data) {
-        console.log(data);
+        console.log("Weather data:", data);
 
-        const conditionsElem = document.getElementById("consitions");
+        const conditionsElem = document.getElementById("conditions");
         const description = data.weather[0].description;
         conditionsElem.textContent = description;
     })
