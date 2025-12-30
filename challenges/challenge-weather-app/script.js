@@ -86,3 +86,16 @@ function displayPhotos(photos) {
         thumbsElem.appendChild(img);
     })
 }
+
+const searchBox = document.getElementById("search");
+
+searchBox.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents page reload
+
+    const searchInput = document.getElementById("search-tf");
+    const city = searchInput.value.trim(); // To get the city name and remove extra spaces
+
+    if (city) {
+        getWeather(city);
+    }
+});
