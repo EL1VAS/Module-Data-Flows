@@ -12,4 +12,12 @@ describe("Verify password", () => {
   test("returns Password rejected if password is null", () => {
     expect(verify(null)).toBe("Password rejected");
   });
+
+  test("returns Password rejected if password doesn't include any capital letters", () => {
+    expect(verify("bnfpmlde")).toBe("Password rejected");
+  });
+
+  test("returns Password accepted if password includes at least one capital letter", () => {
+    expect(verify("Bnfpmlde")).toBe("Password accepted");
+  });
 });
