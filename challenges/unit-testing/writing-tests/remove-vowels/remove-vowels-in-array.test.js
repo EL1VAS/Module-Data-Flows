@@ -7,7 +7,7 @@ test("remove vowels from all words in array", function () {
   // Act
   let result = removeVowelsFromWords(input);
   // Assert
-  expect(result).toBe(expected);
+  expect(result).toEqual(expected);
 });
 
 // example
