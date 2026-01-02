@@ -14,7 +14,7 @@ function convertToOldRoman(n) {
 
   for (let i = 0; i < romanNumerals.length; i++) {
     const { value, numeral } = romanNumerals[i];
-    const count = Math.round(remaining / value); // How many times the value fits to the remaining
+    const count = Math.floor(remaining / value); // How many times the value fits to the remaining
 
     for (let j = 0; j < count; j++) {
       // Add the numeral that many times

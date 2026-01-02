@@ -56,3 +56,33 @@ test("returns M if passed 1000 as an argument", function () {
   const result = convertToOldRoman(input);
   expect(result).toBe("M");
 });
+
+test("returns XV if passed 15 as an argument", function () {
+  const result = convertToOldRoman(15);
+  expect(result).toBe("XV");
+});
+
+test("returns XVIII if passed 18 as an argument", function () {
+  const result = convertToOldRoman(18);
+  expect(result).toBe("XVIII");
+});
+
+test("returns XXII if passed 22 as an argument", function () {
+  const result = convertToOldRoman(22);
+  expect(result).toBe("XXII");
+});
+
+test("returns CXXIII if passed 123 as an argument", function () {
+  const result = convertToOldRoman(123);
+  expect(result).toBe("CXXIII");
+});
+
+test("returns DCCLXXXVIII if passed 788 as an argument", function () {
+  const result = convertToOldRoman(788);
+  expect(result).toBe("DCCLXXXVIII");
+});
+
+test("returns MMDCCCXXXXVI if passed 2846 as an argument", function () {
+  const result = convertToOldRoman(2846);
+  expect(result).toBe("MMDCCCXXXXVI");
+});
