@@ -49,6 +49,7 @@ function submit() {
     pages.value = "";
     check.checked = false;
 
+    render();
   }
 }
 
@@ -63,7 +64,8 @@ function render() {
   let table = document.getElementById("display");
   let rowsNumber = table.rows.length;
   //delete old table
-  for (let n = rowsNumber - 1; n > 0; n--) { // Added a parenthesis
+  for (let n = rowsNumber - 1; n > 0; n--) {
+    // Added a parenthesis
     table.deleteRow(n);
   }
   //insert updated row and cells
@@ -85,7 +87,8 @@ function render() {
     changeBut.className = "btn btn-success";
     wasReadCell.appendChild(changeBut);
     let readStatus = "";
-    if (myLibrary[i].check === true) { // Added a = and changed false to true
+    if (myLibrary[i].check === true) {
+      // Added a = and changed false to true
       readStatus = "Yes";
     } else {
       readStatus = "No";
@@ -103,7 +106,8 @@ function render() {
     deleteCell.appendChild(delButton); // changed to delButton from delBut
     delButton.className = "btn btn-warning"; // changed to delButton from delBut
     delButton.innerHTML = "Delete"; // changed to delButton from delBut
-    delButton.addEventListener("click", function () { // changed to delButton from delBut and click from clicks
+    delButton.addEventListener("click", function () {
+      // changed to delButton from delBut and click from clicks
       alert(`You've deleted title: ${myLibrary[i].title}`);
       myLibrary.splice(i, 1);
       render();
